@@ -1,0 +1,17 @@
+server:
+  port: 8080
+mybatis:
+  mapper-locations: classpath:com.example.demo.mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+spring:
+  datasource:
+    url: jdbc:mysql://39.107.90.67:3306/test?serverTimezone=CTT&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=CTT
+    username: root
+    password: Mm123456
+    continue-on-error: true
+    sql-script-encoding: UTF-8
+    driver-class-name: com.mysql.jdbc.Driver
+
+
+
