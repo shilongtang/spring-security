@@ -6,9 +6,9 @@ mybatis:
     log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
 spring:
   datasource:
-    url: jdbc:mysql://39.107.90.67:3306/test?serverTimezone=CTT&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=CTT
-    username: root
-    password: Mm123456
+    url:
+    username:
+    password:
     continue-on-error: true
     sql-script-encoding: UTF-8
     driver-class-name: com.mysql.jdbc.Driver

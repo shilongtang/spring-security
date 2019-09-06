@@ -34,15 +34,7 @@ public class SelfUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
         SelfUserDetails userInfo = new SelfUserDetails();
         userInfo.setUsername(userName);
-        if(userName.equals("admin")) {
-            //假设返回的用户信息如下;
-            userInfo.setUsername("admin");
-            userInfo.setPassword("123456");
-            userInfo.setAuthorities(getAuthorities("ROLE_admin"));
-            return userInfo;
-        }
-        throw new UsernameNotFoundException("用户不存在！");
-      /*  SysUser sysUser = sysUserService.getUserByUsername(userName);
+        SysUser sysUser = sysUserService.getUserByUsername(userName);
         if (sysUser == null) {
             throw new UsernameNotFoundException("用户不存在！");
         }
@@ -55,7 +47,7 @@ public class SelfUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("用户权限失效！");
         }
         userInfo.setAuthorities(getAuthorities(sysRole.getName()));
-        return userInfo;*/
+        return userInfo;
     }
     private Set<GrantedAuthority> getAuthorities(String role) {
         Set<GrantedAuthority> authoritiesSet = new HashSet();

@@ -4,7 +4,6 @@ import com.example.demo.security.service.SelfUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -69,10 +68,6 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
     @Autowired
     SelfUserDetailsService selfUserDetailsService;
 
-
-    @Autowired
-    AuthenticationFailHandlerConfig myAuthenticationFailHander;
-
     @Bean
     public PersistentTokenRepository persistentTokenRepository() {
         JdbcTokenRepositoryImpl tokenRepository = new JdbcTokenRepositoryImpl();
@@ -124,8 +119,5 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
                 .tokenValiditySeconds(6000);
                 // 无权访问 JSON 格式的数据
                 http.exceptionHandling().accessDeniedHandler(accessDeniedHandler);
-//表单登录，permitAll()表示这个不需要验证 登录页面，登录失败页面
-
-
     }
 }

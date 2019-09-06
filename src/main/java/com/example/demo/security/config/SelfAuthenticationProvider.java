@@ -38,9 +38,9 @@ public class SelfAuthenticationProvider implements AuthenticationProvider {
         if (userInfo == null) {
             throw new UsernameNotFoundException("用户不存在");
         }
-       /* if(!userInfo.getPassword().equals(encodePwd)) {
+        if(!userInfo.getPassword().equals(encodePwd)) {
             throw new BadCredentialsException("密码错误");
-        }*/
+        }
 
         return new UsernamePasswordAuthenticationToken(userName, password, userInfo.getAuthorities());
     }
