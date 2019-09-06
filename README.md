@@ -1,6 +1,7 @@
 # spring-security
-### Springboot security 实现自定义用户校验机制
-* 欢迎大家补充完善
+### Springboot security 
+* 实现自定义用户校验机制-2019-09-06 19:33:05
+## 欢迎大家补充完善
 ### sql 脚本：
 ````mysql
         CREATE TABLE `persistent_logins` (
